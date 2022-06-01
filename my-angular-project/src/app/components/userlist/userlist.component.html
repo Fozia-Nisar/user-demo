@@ -1,0 +1,49 @@
+<section>
+    <div class="container" class="d-flex justify-content-center mt-5">
+        <mat-card class="matcardTable">
+            <mat-card-header>
+                <span id="tableButtons">
+                    <button mat-raised-button color="primary" id="tableLogout" (click)="logout()">
+                        <i class="fa fa-sign-out fa-fw"></i>LogOut</button>
+                    <button mat-raised-button color="primary" (click)="addUser()">
+                        <i class="fa fa-user fa-fw"></i>Add User </button>
+                </span>
+            </mat-card-header>
+            <hr id="line">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr id="tableHead">
+                        <th scope="col">S.no</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">First name</th>
+                        <th scope="col">Last name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Mob No</th>
+                        <th scope="col">DOB</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of userDb; index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{user._id}}</td>
+                        <td>{{user.firstName}}</td>
+                        <td>{{user.lastName}}</td>
+                        <td>{{user.Add}}</td>
+                        <td>{{user.Mob}}</td>
+                        <td>{{user.DOB}}</td>
+                        <td>{{user.email}}</td>
+                        <td>
+                            <i class="fa fa-edit cursor text-primary" (click)="editUser(user._id)" id="tableEditIcon"> </i>
+                            <i class="fa fa-trash cursor text-danger" (click)="deleteUser(user._id)"> </i>
+                        </td>
+                    </tr>
+                    <tr class="emptyDB">
+                        <td colspan="9" *ngIf="userDb.length==0" class="text-danger">{{data}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-card>
+    </div>
+</section>

@@ -1,0 +1,120 @@
+<section>
+    <form #editUserForm="ngForm">
+        <div class="container" class="d-flex justify-content-center mt-5">
+            <mat-card class="signupCard">
+                <mat-card-header class="styleHeader">Edit User Details</mat-card-header>
+                <mat-card-content>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>First Name</mat-label>
+                                    <input matInput placeholder="First Name" name="firstname" type="text"
+                                        [(ngModel)]="editedUserModel.firstName" #firstName="ngModel" required>
+                                    <div *ngIf="firstName.invalid && (firstName.touched || firstName.dirty
+                                     || editUserForm.submitted)" class="text-danger">
+                                        <div *ngIf="firstName.errors?.required"> First Name is required</div>
+                                    </div>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Last Name</mat-label>
+                                    <input matInput placeholder="Last Name" name="lastname" type="text"
+                                        [(ngModel)]="editedUserModel.lastName" #lastName="ngModel" required>
+                                    <div *ngIf="lastName.invalid && (lastName.dirty || 
+                                    lastName.touched || editUserForm.submitted)" class="text-danger">
+                                        <div *ngIf="lastName.errors?.required">Last Name is Required</div>
+                                    </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Address</mat-label>
+                                <input matInput placeholder="Address" name="Add" [(ngModel)]="editedUserModel.Add"
+                                    #Add="ngModel" required>
+                                <div *ngIf="Add.invalid &&(Add.touched || Add.dirty || editUserForm.submitted)"
+                                    class="text-danger">
+                                    <div *ngIf="Add.errors?.required">Address is Required</div>
+                                </div>
+                            </mat-form-field>
+                        </div>
+                        <div class="col">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Mobile No</mat-label>
+                                <input matInput placeholder="Contact no" name="Mob" type="tel"
+                                    [(ngModel)]="editedUserModel.Mob" #Mob="ngModel" required>
+                                <div *ngIf="Mob.invalid && (Mob.touched || Mob.dirty || editUserForm.submitted)"
+                                    class="text-danger">
+                                    <div *ngIf="Mob.errors?.required">Mobile No. is Required</div>
+                                </div>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">
+                                <mat-label>DOB</mat-label>
+                                <input matInput placeholder="Date Of Birth" name="DOB" type="date"
+                                    [(ngModel)]="editedUserModel.DOB" #DOB="ngModel" required>
+                                <div *ngIf="DOB.invalid && (DOB.touched || DOB.dirty || editUserForm.submitted)"
+                                    class="text-danger">
+                                    <div *ngIf="DOB.errors?.required"> DOB is Required</div>
+                                </div>
+                            </mat-form-field>
+                        </div>
+                        <div class="col">
+                            <mat-form-field appearance="outline">
+                                <input matInput placeholder="Email" name="email" type="email" disabled
+                                    [(ngModel)]="editedUserModel.email" email="true" #email="ngModel" required>
+                                <div *ngIf="email.invalid && (email.dirty || email.touched || editUserForm.submitted)"
+                                    class="text-danger">
+                                    <div *ngIf="email.errors?.required">Email is Required</div>
+                                </div>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">
+                                <input matInput placeholder="Password" name="password" type="password"
+                                    [(ngModel)]="editedUserModel.password" #password="ngModel" required>
+                                <div *ngIf="password.invalid && (password.dirty || password.touched || editUserForm.submitted)"
+                                    class="text-danger">
+                                    <div *ngIf="password.errors?.required">Password is Required</div>
+                                </div>
+                            </mat-form-field>
+                        </div>
+                        <div class="col">
+                            <mat-form-field appearance="outline">
+                                <input matInput placeholder="Confirm Password" name="confirmPassword" type="password"
+                                    [(ngModel)]="editedUserModel.confirmPassword" #confirmPassword="ngModel" required>
+                                <div *ngIf="confirmPassword.invalid && (confirmPassword.touched || confirmPassword.dirty || editUserForm.submitted)"
+                                    class="text-danger">
+                                    <div *ngIf="confirmPassword.errors?.required"> Confirm Password is Required</div>
+                                </div>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </mat-card-content>
+
+                <mat-card-actions>
+                    <div>
+                        <button mat-raised-button color="primary" (click)="updateDetails()"> Update</button>
+                        <button mat-raised-button id="bakButon" color="primary" routerLink="/userlist">Back </button>
+                    </div>
+                    <br>
+
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </form>
+</section>

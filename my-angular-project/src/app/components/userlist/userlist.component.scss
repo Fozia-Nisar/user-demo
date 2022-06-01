@@ -1,0 +1,37 @@
+.matcardTable{
+   min-width: 70%;
+   margin:auto;
+   text-align:center;
+   padding:0px;
+   background-color:ivory;
+        }
+#tableButtons{
+   text-align: right;
+   margin-left:63%;
+  margin-bottom: 30px;
+   margin-top: 30px;
+   border-style: 5px yellowgreen;
+       }
+#tableLogout{
+   margin-left: 80px;
+   margin-right: 20px;
+    }
+#tableHead{
+   color:green;
+   margin-right: 20px;
+       }
+#tableEditIcon{
+   margin-right: 15px;
+     }
+#line{
+    margin-bottom: 5%;
+    border:2px solid green;
+  }
+.emptyDB{
+    text-align: center;
+    font-size: large;
+    height:20px ;
+}
+.cursor{
+  cursor:pointer
+}
